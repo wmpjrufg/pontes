@@ -1,4 +1,4 @@
-# **Aula 01: Conceitos iniciais sobre o projeto de pontes**
+# Aula 01: Conceitos iniciais sobre o projeto de pontes
 
 ## 1. Definições gerais
 

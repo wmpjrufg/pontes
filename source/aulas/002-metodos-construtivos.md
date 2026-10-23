@@ -1,4 +1,4 @@
-# **Aula 02: Métodos construtivos de pontes**
+# Aula 02: Métodos construtivos de pontes
 
 O processo construtivo define como os elementos da ponte serão executados e montados. Nesta aula, estudamos os métodos apresentados para a **infraestrutura**, a **mesoestrutura** e a **superestrutura**, relacionando a execução às condições do local e ao comportamento da estrutura durante a obra.
 

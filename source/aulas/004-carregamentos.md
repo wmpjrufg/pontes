@@ -1,4 +1,4 @@
-# **Aula 04: Superestrutura de Pontes de Concreto — Ações, Trem-Tipo e Exemplo Numérico**
+# Aula 04: Superestrutura de Pontes de Concreto — Ações, Trem-Tipo e Exemplo Numérico
 
 ```{note}
 Esta aula reúne o material de carregamentos fornecido para a disciplina: ações permanentes, trem-tipo rodoviário, distribuição transversal e exemplo da Ponte sobre o Rio Pau Seco.

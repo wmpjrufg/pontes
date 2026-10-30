@@ -12,7 +12,12 @@ O trabalho prático do semestre consiste no dimensionamento de uma ponte de conc
 **Figura 1** – Corte longitudinal da ponte de referência, com vão central de 25,00 m, balanços de 4,50 m, pilares de 12,00 m e tubulões com base alargada de 3,00 m de diâmetro (altura da base de 1,35 m).
 ```
 
-O projeto de fôrma completo da ponte de referência (plantas, cortes e detalhamento) está disponível para download em {download}`trabalho.pdf <../_static/arquivos/ponte-referencia.pdf>`.
+O projeto de fôrma completo da ponte de referência (plantas, cortes e detalhamento) está disponível para download nos seguintes formatos:
+
+- Planta em PDF: {download}`projeto_completo.pdf <../_static/arquivos/projeto_completo.pdf>`
+- Desenho em AutoCAD: {download}`projeto_completo.dwg <../_static/arquivos/projeto_completo.dwg>`
+- Modelo BIM em Revit: {download}`projeto_completo.rvt <../_static/arquivos/projeto_completo.rvt>`
+- Modelo 3D em SketchUp: {download}`projeto_completo_3d.skp <../_static/arquivos/projeto_completo_3d.skp>`
 
 ### 1.1 Parâmetros base do projeto
 

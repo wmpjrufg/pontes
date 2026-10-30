@@ -8,8 +8,12 @@ Repositório das aulas e materiais da disciplina de Pontes. O site é gerado com
 source/
   conf.py           # configuração do Sphinx
   index.md          # página inicial / índice (toctree)
+  disciplina/       # software, Markdown, plano, provas, trabalho e solução
   aulas/            # arquivos .md de cada aula
     001-introducao.md
+  _ext/             # extensão que libera a solução do trabalho por entrega
+professor/          # material do professor (fora do site)
+  solucao-trabalho/ # entrega-N.md e instruções de liberação
 ```
 
 ## Adicionando uma nova aula
@@ -38,3 +42,13 @@ O resultado fica em `build/html/index.html`.
 ## Publicação
 
 O workflow em `.github/workflows/pages.yml` builda o site e publica no GitHub Pages a cada push em `main`. É necessário habilitar, uma única vez, em **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+## Solução do trabalho: liberação por entrega
+
+A página **Solução do trabalho** aparece no menu da disciplina. Para publicar
+uma parte, altere a entrega correspondente de `False` para `True` em
+`source/conf.py`, no dicionário `solucao_entregas_liberadas`, e reconstrua o site
+(ou publique pelo fluxo de push em `main`). Todas começam ocultas.
+
+Os textos ficam em `professor/solucao-trabalho/entrega-N.md`. Consulte as
+[instruções de edição e liberação](professor/solucao-trabalho/README.md).

@@ -42,6 +42,26 @@ Cada entrega deve ser enviada em **um único arquivo ZIP**, por um integrante do
 Exemplos: `entrega1_JoaoSilvaMariaSouza.zip`, `entrega2_JoaoSilvaMariaSouza.zip` e assim por diante, seguindo o mesmo padrão nas demais entregas. Arquivos fora desse padrão poderão não ser avaliados.
 ```
 
+A [solução do trabalho](000-solucao-trabalho.md) será disponibilizada por
+entrega, ao longo do semestre, para conferência dos cálculos e discussão
+dos erros mais frequentes.
+
+O trabalho é desenvolvido em seis entregas sequenciais. Cada entrega usa os
+resultados da anterior; se uma verificação posterior exigir alterar uma seção,
+os cálculos das entregas anteriores afetados devem ser refeitos e reapresentados.
+
+(tabela-1)=
+**Tabela 1.** Etapas de entrega do trabalho.
+
+| Entrega | Conteúdo | Itens do roteiro |
+|---|---|---|
+| 1 | Determinação das ações permanentes e variáveis | 2.1 a 2.5 |
+| 2 | Fadiga e armadura final da viga | 2.6 e 2.7 |
+| 3 | Tabuleiro | 2.8 |
+| 4 | Transversina | 2.9 |
+| 5 | Esforços em pilares | 2.10 e 2.11.1 a 2.11.3 |
+| 6 | Detalhamento dos pilares | 2.11.4 e 2.11.5 |
+
 ### 2.1 Desenho da estrutura e das seções transversais em CAD
 
 - Lançamento da geometria da ponte em CAD: Corte longitudinal, Corte B, Corte C, Detalhe 1 e Detalhe 5.
@@ -64,16 +84,40 @@ Para o Detalhe 5, a barreira tipo New Jersey deverá ser representada conforme o
 - Modelo estrutural contínuo/isostático considerando a geometria longitudinal (vão central de $25\text{ m}$ e balanços/extensões de $4{,}5\text{ m}$ e $3{,}0\text{ m}$).
 - Obtenção dos diagramas de momentos fletores ($M_g$) e esforços cortantes ($V_g$) ao longo do comprimento das vigas para a carga permanente.
 
-````{admonition} Entrega 1: Desenhos e carregamentos permanentes
+### 2.4 Levantamento de carregamentos variáveis
+
+**Ações variáveis ($q$):**
+
+- Veículo-tipo normativo TB-450 (ABNT NBR 7188:2024 [[2]](#ref-2)): 3 eixos de $150\text{ kN}$ ($75\text{ kN}$ por roda) espaçados em $1{,}50\text{ m}$.
+- Carga distribuída de multidão: $q = 5{,}0\text{ kN/m}^2$ na pista de rolamento.
+- Carga nos passeios para pedestres: $3{,}0\text{ kN/m}^2$ concomitante ou $5{,}0\text{ kN/m}^2$ para dimensionamento local.
+
+**Coeficientes dinâmicos:**
+
+- Coeficiente de Impacto Vertical (CIV) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
+- Coeficiente de Número de Faixas (CNF) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
+- Coeficiente de Impacto Adicional ($CIA = 1{,}25$ para estruturas de concreto).
+- Fator dinâmico combinado: $F_D = CIV \cdot CNF \cdot CIA$.
+
+### 2.5 Cálculo dos esforços do trem-tipo
+
+- Construção das linhas de influência (LI) para momentos fletores e esforços cortantes nas seções críticas ($L/8$, $L/4$, $3L/8$, $L/2$ e sobre os apoios).
+- Determinação do trem-tipo transversal simplificado (método da alavanca ou grelha) para definir a parcela de carga transferida para a longarina mais solicitada.
+- Posicionamento longitudinal do veículo TB-450 e da carga de multidão sobre as LI para obter os esforços máximos e mínimos.
+- Majoração de todos os esforços móveis pelo fator dinâmico $F_D$.
+
+````{admonition} Entrega 1: Determinação das ações permanentes e variáveis
 :class: destaque-verde
 
-A **Entrega 1** contempla os itens **2.1, 2.2 e 2.3** do roteiro de projeto.
+A **Entrega 1** contempla os itens **2.1 a 2.5** do roteiro de projeto.
 
 **Item 2.1 - Desenhos em AutoCAD:** desenvolver as seções transversais e os detalhes necessários para determinar o peso das peças de concreto da ponte de referência.
 
 **Item 2.2 - Carregamentos permanentes:** determinar as áreas e os volumes das peças desenhadas em AutoCAD e calcular os carregamentos permanentes que atuam sobre a ponte, incluindo os demais componentes previstos neste item.
 
 **Item 2.3 - Análise de esforços no Ftool:** representar o sistema estrutural da ponte, aplicar os carregamentos permanentes calculados e determinar os diagramas de momentos fletores e esforços cortantes na longarina.
+
+**Itens 2.4 e 2.5 - Ações variáveis:** determinar as ações variáveis (veículo-tipo TB-450, multidão, passeios e coeficientes dinâmicos) e os esforços do trem-tipo na longarina.
 
 **Apresentação e arquivos obrigatórios:**
 
@@ -120,28 +164,6 @@ O número de pranchas depende do projeto de cada grupo; o DWG deve conter todos 
 **Regra de pontuação:** cada critério recebe 100% dos pontos quando atendido integralmente, 50% quando atendido parcialmente e zero quando ausente, incorreto ou impossível de verificar. A falta de identificação completa de todos os integrantes zera o critério de identificação e notas. Arquivos ausentes ou que não abrem não pontuam no conteúdo que depender deles para ser verificado. A ausência de notas de projeto não gera desconto quando elas não forem necessárias. A nota final corresponde à soma dos critérios.
 ````
 
-### 2.4 Levantamento de carregamentos variáveis
-
-**Ações variáveis ($q$):**
-
-- Veículo-tipo normativo TB-450 (ABNT NBR 7188:2024 [[2]](#ref-2)): 3 eixos de $150\text{ kN}$ ($75\text{ kN}$ por roda) espaçados em $1{,}50\text{ m}$.
-- Carga distribuída de multidão: $q = 5{,}0\text{ kN/m}^2$ na pista de rolamento.
-- Carga nos passeios para pedestres: $3{,}0\text{ kN/m}^2$ concomitante ou $5{,}0\text{ kN/m}^2$ para dimensionamento local.
-
-**Coeficientes dinâmicos:**
-
-- Coeficiente de Impacto Vertical (CIV) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
-- Coeficiente de Número de Faixas (CNF) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
-- Coeficiente de Impacto Adicional ($CIA = 1{,}25$ para estruturas de concreto).
-- Fator dinâmico combinado: $F_D = CIV \cdot CNF \cdot CIA$.
-
-### 2.5 Cálculo dos esforços do trem-tipo
-
-- Construção das linhas de influência (LI) para momentos fletores e esforços cortantes nas seções críticas ($L/8$, $L/4$, $3L/8$, $L/2$ e sobre os apoios).
-- Determinação do trem-tipo transversal simplificado (método da alavanca ou grelha) para definir a parcela de carga transferida para a longarina mais solicitada.
-- Posicionamento longitudinal do veículo TB-450 e da carga de multidão sobre as LI para obter os esforços máximos e mínimos.
-- Majoração de todos os esforços móveis pelo fator dinâmico $F_D$.
-
 ### 2.6 Envoltória final de esforços
 
 - Combinação de ações no Estado Limite Último (ELU), conforme NBR 7187 e NBR 6118, utilizando $\gamma_g = 1{,}35$ para ações permanentes e $\gamma_q = 1{,}50$ para ações variáveis.
@@ -163,6 +185,12 @@ O número de pranchas depende do projeto de cada grupo; o DWG deve conter todos 
 
 - Determinação da variação da tensão no aço ($\Delta \sigma_s$) decorrente da passagem do veículo-tipo.
 - Verificação da tensão máxima no concreto sob a combinação de fadiga ($\sigma_c \le 0{,}45 \cdot f_{ck}$).
+
+```{admonition} Entrega 2: Fadiga e armadura final da viga
+:class: destaque-verde
+
+A **Entrega 2** contempla os itens **2.6 e 2.7** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
+```
 
 ### 2.8 Dimensionamento do tabuleiro (laje)
 
@@ -301,6 +329,12 @@ $$
 **Cisalhamento:** $k = 1{,}6 - 0{,}204 = 1{,}40$ e $\rho_1 = 11{,}93/(100 \cdot 20{,}4) = 0{,}0059$, logo $V_{Rd1} = 0{,}362 \cdot 1{,}40 \cdot (1{,}2 + 40 \cdot 0{,}0059) \cdot 1000 \cdot 204 \cdot 10^{-3} \approx 148\text{ kN/m} > V_d = 101{,}09\text{ kN/m}$. A laje dispensa armadura transversal.
 ```
 
+```{admonition} Entrega 3: Tabuleiro
+:class: destaque-verde
+
+A **Entrega 3** contempla o item **2.8** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
+```
+
 ### 2.9 Dimensionamento da transversina
 
 As transversinas são as vigas transversais que ligam as longarinas. Na ponte de referência existem dois tipos, conforme os detalhes do projeto de fôrma: a **transversina de apoio**, localizada sobre os pilares, e a **transversina de vão**, localizada no meio do vão. Suas funções são:
@@ -372,6 +406,12 @@ com $V_{sd} \le V_{Rd2}$ e $f_{ywd}$ limitado a $435\text{ MPa}$.
 5. Detalhar a armadura na prancha e conferir os cobrimentos ($c_{\text{nom}} = 4\text{ cm}$, CAA III).
 ```
 
+```{admonition} Entrega 4: Transversina
+:class: destaque-verde
+
+A **Entrega 4** contempla o item **2.9** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
+```
+
 ### 2.10 Forças horizontais
 
 - **Frenagem e aceleração:** maior valor entre 25% do peso do veículo-tipo ($0{,}25 \times 450\text{ kN} = 112{,}5\text{ kN}$) ou 5% da carga total de multidão na pista utilizável.
@@ -428,6 +468,12 @@ $$
 
 O momento de 1ª ordem também deve respeitar o mínimo $M_{1d,\min} = N_d\,(0{,}015 + 0{,}03\,h)$, com $h$ em metros.
 
+```{admonition} Entrega 5: Esforços em pilares
+:class: destaque-verde
+
+A **Entrega 5** contempla os itens **2.10 e 2.11.1 a 2.11.3** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
+```
+
 #### 2.11.4 Armadura longitudinal e transversal
 
 Com os esforços de cálculo, determina-se a armadura por **ábacos de flexo-compressão reta para seção circular**, entrando com:
@@ -483,6 +529,12 @@ W_b = \frac{\pi D_b^{3}}{32}
 $$
 
 em que $N_{\text{base}}$ inclui o peso do fuste e da base, e $M_{\text{base}}$ acrescenta ao momento na base do pilar o efeito da força horizontal ao longo do fuste. Para $D_b = 3{,}00\text{ m}$, $A_b = 7{,}07\text{ m}^2$ e $W_b = 2{,}65\text{ m}^3$. Deve-se ainda verificar o ângulo de abertura da base do tubulão e, quando necessário, o fuste e a armadura da base conforme a NBR 6122.
+
+```{admonition} Entrega 6: Detalhamento dos pilares
+:class: destaque-verde
+
+A **Entrega 6** contempla os itens **2.11.4 e 2.11.5** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
+```
 
 ## Referências
 

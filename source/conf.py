@@ -1,6 +1,11 @@
 # Configuration file for the Sphinx documentation builder.
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "_ext"))
+
 project = "Pontes"
 copyright = "2026, Wanderlei Malaquias Pereira Jr."
 author = "Wanderlei Malaquias Pereira Jr."
@@ -9,7 +14,19 @@ language = "pt_BR"
 
 extensions = [
     "myst_parser",
+    "solucao_trabalho",
 ]
+
+# Liberação da solução do trabalho: altere False para True após cada entrega.
+# Uma linha removida ou comentada equivale a False. Depois, gere/publique o site.
+solucao_entregas_liberadas = {
+    1: False,  # Determinação das ações permanentes e variáveis
+    2: False,  # Fadiga e armadura final da viga
+    3: False,  # Tabuleiro
+    4: False,  # Transversina
+    5: False,  # Esforços em pilares
+    6: False,  # Detalhamento dos pilares
+}
 
 source_suffix = {
     ".rst": "restructuredtext",

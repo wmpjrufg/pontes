@@ -1,36 +1,48 @@
 # Trabalho Prático
 
-## 1. Diretrizes de projeto
+## Diretrizes de projeto
 
-O trabalho prático do semestre consiste no dimensionamento de uma ponte de concreto armado com duas longarinas moldadas *in loco*. Será tomada como referência a ponte que consta na bibliografia de Marchetti [[1]](#ref-1), cujo corte longitudinal é apresentado na [Figura 1](#fig-1).
-
-(fig-1)=
-```{figure} ../_static/aulas/ponte-referencia.png
-:alt: Corte longitudinal da ponte de referência
-:width: 80%
-
-**Figura 1** – Corte longitudinal da ponte de referência, com vão central de 25,00 m, balanços de 4,50 m, pilares de 12,00 m e tubulões com base alargada de 3,00 m de diâmetro (altura da base de 1,35 m).
-```
-
-O projeto de fôrma completo da ponte de referência (plantas, cortes e detalhamento) está disponível para download nos seguintes formatos:
+O trabalho prático do semestre consiste no dimensionamento de uma ponte de concreto armado com duas longarinas moldadas *in loco*. Será tomada como referência a ponte que consta na bibliografia de Marchetti [[1]](#ref-1). O projeto de fôrma completo da ponte de referência (plantas, cortes e detalhamento) está disponível para download nos seguintes formatos:
 
 - Planta em PDF: {download}`projeto_completo.pdf <../_static/arquivos/projeto_completo.pdf>`
 - Desenho em AutoCAD: {download}`projeto_completo.dwg <../_static/arquivos/projeto_completo.dwg>`
 - Modelo BIM em Revit: {download}`projeto_completo.rvt <../_static/arquivos/projeto_completo.rvt>`
 - Modelo 3D em SketchUp: {download}`projeto_completo_3d.skp <../_static/arquivos/projeto_completo_3d.skp>`
 
-### 1.1 Parâmetros base do projeto
+(parametros-projeto)=
+### Parâmetros do projeto
 
-- Vão principal (central): $25{,}00\text{ m}$
-- Balanços: $4{,}50\text{ m}$
-- Altura dos pilares: $12{,}00\text{ m}$ (diâmetro/largura de $1{,}20\text{ m}$)
-- Fundação em Tubulão de Concreto Armado
-- Concreto: $f_{ck} = 30\text{ MPa}$
-- Aço: CA-50 ($f_{yk} = 500\text{ MPa}$)
-- Cobrimento nominal: $c_{\text{nom}} = 4\text{ cm}$
-- Classe de agressividade ambiental: CAA III (forte / industrial ou marinha)
+**Geometria da ponte de referência:**
 
-## 2. Roteiro de etapas e entregas do semestre
+- Vão principal central: $25{,}00\text{ m}$; balanços/extensões nas extremidades: $4{,}50\text{ m}$ e $3{,}00\text{ m}$ (corresponde a laje de aproximação), conforme o corte longitudinal.
+- Espaçamento entre transversinas: $12{,}50\text{ m}$.
+- Cada linha de apoio tem dois pilares circulares, um sob cada longarina, com diâmetro de $1{,}20\text{ m}$ e altura de $12{,}00\text{ m}$.
+- Fundação em tubulão de concreto armado com base alargada de diâmetro $3{,}00\text{ m}$ e altura de $1{,}35\text{ m}$.
+- Transversina de vão: largura de $30\text{ cm}$ e altura total de $175\text{ cm}$; transversina de apoio: largura de $40\text{ cm}$ e altura total de $200\text{ cm}$;
+- Possui alas abertas e contenção na extremidade da ponte.
+
+**Materiais e durabilidade:**
+
+- Concreto: $f_{ck} = 30\text{ MPa}$ e peso específico $\gamma_c = 25\text{ kN/m}^3$.
+- Aço: CA-50, com $f_{yk} = 500\text{ MPa}$.
+- Cobrimento nominal: $c_{\text{nom}} = 4\text{ cm}$.
+- Classe de agressividade ambiental: CAA III (forte / industrial ou marinha).
+
+**Ações permanentes:**
+
+- Pavimentação em CBUQ: peso específico $\gamma_{\text{asf}} = 24\text{ kN/m}^3$, espessura média inicial de $8\text{ cm}$ e carga adicional de $2\text{ kN/m}^2$ para recapeamento futuro.
+- Guarda-corpo metálico: peso linear de $0{,}10\text{ kN/m}$. O peso da barreira New Jersey deve ser obtido a partir da seção do Detalhe 5.
+
+**Ações variáveis e coeficientes:**
+
+- Veículo-tipo TB-450, conforme ABNT NBR 7188:2024 [[2]](#ref-2): três eixos de $150\text{ kN}$ (ou $75\text{ kN}$ por roda), espaçados longitudinalmente de $1{,}50\text{ m}$; distância transversal entre as rodas de um eixo de $2{,}00\text{ m}$; área de contato de cada roda de $0{,}20\text{ m} \times 0{,}50\text{ m}$.
+- Carga de multidão na pista de rolamento: $5{,}0\text{ kN/m}^2$.
+- Carga nos passeios: $3{,}0\text{ kN/m}^2$ concomitante ou $5{,}0\text{ kN/m}^2$ para dimensionamento local.
+- Coeficiente de Impacto Vertical (CIV) e Coeficiente de Número de Faixas (CNF): conforme ABNT NBR 7188:2024 [[2]](#ref-2). Para vãos inferiores a $10{,}0\text{ m}$, adotar $CIV = 1{,}35$.
+- Coeficiente de Impacto Adicional: $CIA = 1{,}25$ para estruturas de concreto. O fator dinâmico combinado é $F_D = CIV \cdot CNF \cdot CIA$; em lajes e transversinas, que não recebem o CNF, usar $\varphi = CIV \cdot CIA$.
+- Coeficientes de ponderação no ELU: $\gamma_g = 1{,}35$ para ações permanentes e $\gamma_q = 1{,}50$ para ações variáveis.
+
+## Roteiro de etapas e entregas do semestre
 
 ```{admonition} Como enviar as entregas pelo Google Classroom
 :class: destaque-azul
@@ -74,30 +86,23 @@ Para o Detalhe 5, a barreira tipo New Jersey deverá ser representada conforme o
 
 ### 2.2 Levantamento de carregamentos permanentes
 
-- Peso próprio das longarinas, laje do tabuleiro, mísulas e transversinas ($\gamma_c = 25\text{ kN/m}^3$).
-- Peso da pavimentação em CBUQ: considerar peso específico de $\gamma_{\text{asf}} = 24\text{ kN/m}^3$ e espessura média inicial de $8\text{ cm}$, acrescido de uma carga permanente de $2\text{ kN/m}^2$ sobre a área pavimentada para previsão de recapeamento futuro.
-- Peso das barreiras de proteção tipo New Jersey (Detalhe 5) e guarda-corpos metálicos com peso linear de $0,10\text{ kN/m}$.
+- Determinar as ações permanentes das peças estruturais, pavimentação, barreiras e guarda-corpos conforme as geometrias e os valores definidos nos parâmetros do projeto.
 
 ### 2.3 Cálculo dos esforços permanentes
 
 - Determinação da carga permanente distribuída $g_{\text{long}}$ por metro linear em cada longarina.
-- Modelo estrutural contínuo/isostático considerando a geometria longitudinal (vão central de $25\text{ m}$ e balanços/extensões de $4{,}5\text{ m}$ e $3{,}0\text{ m}$).
+- Modelo estrutural contínuo/isostático considerando a geometria longitudinal definida nos parâmetros do projeto.
 - Obtenção dos diagramas de momentos fletores ($M_g$) e esforços cortantes ($V_g$) ao longo do comprimento das vigas para a carga permanente.
 
 ### 2.4 Levantamento de carregamentos variáveis
 
-**Ações variáveis ($q$):**
-
-- Veículo-tipo normativo TB-450 (ABNT NBR 7188:2024 [[2]](#ref-2)): 3 eixos de $150\text{ kN}$ ($75\text{ kN}$ por roda) espaçados em $1{,}50\text{ m}$.
-- Carga distribuída de multidão: $q = 5{,}0\text{ kN/m}^2$ na pista de rolamento.
-- Carga nos passeios para pedestres: $3{,}0\text{ kN/m}^2$ concomitante ou $5{,}0\text{ kN/m}^2$ para dimensionamento local.
+**Ações variáveis ($q$):** considerar o veículo-tipo, as cargas de multidão e as cargas nos passeios definidas nos parâmetros do projeto.
 
 **Coeficientes dinâmicos:**
 
 - Coeficiente de Impacto Vertical (CIV) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
 - Coeficiente de Número de Faixas (CNF) — conforme ABNT NBR 7188:2024 [[2]](#ref-2).
-- Coeficiente de Impacto Adicional ($CIA = 1{,}25$ para estruturas de concreto).
-- Fator dinâmico combinado: $F_D = CIV \cdot CNF \cdot CIA$.
+- Coeficiente de Impacto Adicional para estruturas de concreto e fator dinâmico combinado, conforme os parâmetros do projeto: $F_D = CIV \cdot CNF \cdot CIA$.
 
 ### 2.5 Cálculo dos esforços do trem-tipo
 
@@ -166,7 +171,7 @@ O número de pranchas depende do projeto de cada grupo; o DWG deve conter todos 
 
 ### 2.6 Envoltória final de esforços
 
-- Combinação de ações no Estado Limite Último (ELU), conforme NBR 7187 e NBR 6118, utilizando $\gamma_g = 1{,}35$ para ações permanentes e $\gamma_q = 1{,}50$ para ações variáveis.
+- Combinação de ações no Estado Limite Último (ELU), conforme NBR 7187 e NBR 6118, utilizando os coeficientes de ponderação definidos nos parâmetros do projeto.
 - Traçado dos diagramas envoltórios de flexão ($M_{sd,\text{máx}}$ e $M_{sd,\text{mín}}$) e de cortante ($V_{sd,\text{máx}}$).
 
 ### 2.7 Dimensionamento da longarina com verificação à fadiga
@@ -204,7 +209,7 @@ Material em preparação. O cálculo dos momentos móveis na laje central (tabel
 
 A laje é dividida em duas regiões, que se comportam de maneira distinta:
 
-- **Laje central:** painel compreendido entre as longarinas. Como as longarinas possuem rigidez à torção, a laje fica parcialmente engastada nelas; por simplicidade, o modelo adotado é de uma faixa contínua, apoiada nas longarinas, com vão efetivo $\ell_x$ determinado conforme a NBR 6118 [[4]](#ref-4). Se a relação $\ell_y/\ell_x$ entre os vãos nas duas direções (distância entre transversinas e distância entre longarinas) for maior que $2$, a laje é armada em **uma direção** — como ocorre na ponte de referência, em que as transversinas estão espaçadas de $12{,}50\text{ m}$. Caso contrário, é armada em **duas direções**.
+- **Laje central:** painel compreendido entre as longarinas. Como as longarinas possuem rigidez à torção, a laje fica parcialmente engastada nelas; por simplicidade, o modelo adotado é de uma faixa contínua, apoiada nas longarinas, com vão efetivo $\ell_x$ determinado conforme a NBR 6118 [[4]](#ref-4). Se a relação $\ell_y/\ell_x$ entre os vãos nas duas direções (distância entre transversinas e distância entre longarinas) for maior que $2$, a laje é armada em **uma direção**. Caso contrário, é armada em **duas direções**.
 - **Laje em balanço:** trecho que se projeta além das longarinas até a borda do tabuleiro. É modelada como uma **viga em balanço engastada na longarina**, sendo, em geral, a região mais solicitada à flexão e ao cisalhamento por conta do braço de alavanca da barreira e das rodas.
 
 #### 2.8.2 Ações na laje
@@ -219,9 +224,9 @@ g_2 = \gamma_{\text{asf}} \cdot e_{\text{asf}} + 2{,}0
 p_{\text{barr}} = A_{\text{barr}} \cdot \gamma_c
 $$
 
-em que $g_1$ é o peso próprio da laje ($\text{kN/m}^2$); $h$, a espessura da laje (m); $g_2$, a carga de pavimentação mais a reserva de recapeamento ($\text{kN/m}^2$); $e_{\text{asf}}$, a espessura do pavimento (m); e $p_{\text{barr}}$, a carga linear da barreira New Jersey ($\text{kN/m}$), obtida com a área $A_{\text{barr}}$ da seção desenhada no Detalhe 5. O guarda-corpo metálico entra como carga linear adicional de $0{,}10\text{ kN/m}$.
+em que $g_1$ é o peso próprio da laje ($\text{kN/m}^2$); $h$, a espessura da laje (m); $g_2$, a carga de pavimentação mais a reserva de recapeamento ($\text{kN/m}^2$); $e_{\text{asf}}$, a espessura do pavimento (m); e $p_{\text{barr}}$, a carga linear da barreira New Jersey ($\text{kN/m}$), obtida com a área $A_{\text{barr}}$ da seção desenhada no Detalhe 5. Os pesos específicos, as dimensões da pavimentação, a carga de recapeamento e o peso do guarda-corpo são os definidos nos parâmetros do projeto.
 
-**Ações variáveis:** cargas das rodas do TB-450 ($P = 75\text{ kN}$ por roda), com área de contato de $0{,}20\text{ m} \times 0{,}50\text{ m}$ e carga de multidão nas regiões não ocupadas pelo veículo. Nos elementos transversais ao tráfego (lajes e transversinas) **não se aplica o CNF** [[2]](#ref-2); a majoração dinâmica é, portanto:
+**Ações variáveis:** cargas das rodas e carga de multidão definidas nos parâmetros do projeto, aplicadas nas regiões não ocupadas pelo veículo. Nos elementos transversais ao tráfego (lajes e transversinas) **não se aplica o CNF** [[2]](#ref-2); a majoração dinâmica é, portanto:
 
 $$
 \varphi = CIV \cdot CIA
@@ -229,7 +234,7 @@ $$
 Q_{\text{roda}} = P \cdot \varphi
 $$
 
-Para vãos inferiores a $10{,}0\text{ m}$, $CIV = 1{,}35$; com $CIA = 1{,}25$ para estruturas de concreto, resulta $\varphi = 1{,}35 \cdot 1{,}25 = 1{,}6875$.
+Adotar os coeficientes definidos nos parâmetros do projeto para o vão analisado.
 
 **Difusão da carga da roda:** a carga se espalha a $45^\circ$ através do pavimento e até o plano médio da laje, de modo que a área carregada na superfície média passa a ter dimensões:
 
@@ -260,16 +265,16 @@ $$
 O posicionamento crítico é com a roda o mais próximo possível da barreira, respeitando a distância mínima entre a roda e o guarda-rodas. Os esforços de cálculo no ELU são:
 
 $$
-M_d = 1{,}35\,M_{g,k} + 1{,}50\,M_{q,k}
+M_d = \gamma_g\,M_{g,k} + \gamma_q\,M_{q,k}
 \qquad\qquad
-V_d = 1{,}35\,V_{g,k} + 1{,}50\,V_{q,k}
+V_d = \gamma_g\,V_{g,k} + \gamma_q\,V_{q,k}
 $$
 
-**Laje central.** Para as ações permanentes, adotando a faixa de $1{,}00\text{ m}$ com engastamento nas longarinas como hipótese simplificadora, os momentos são $M^{-} = -g\,\ell_x^2/12$ nos apoios e $M^{+} = g\,\ell_x^2/24$ no vão. Para as rodas do TB-450, os momentos $m_x$ e $m_y$ ($\text{kNm/m}$) são obtidos por tabelas de Rüsch ou Pucher, ou pelo método das faixas equivalentes (modelo de viga contínua no Ftool, com a roda na posição mais desfavorável e a largura efetiva de distribuição). Os valores obtidos são majorados por $\varphi$ e combinados com $\gamma_g = 1{,}35$ e $\gamma_q = 1{,}50$.
+**Laje central.** Para as ações permanentes, adotando a faixa de $1{,}00\text{ m}$ com engastamento nas longarinas como hipótese simplificadora, os momentos são $M^{-} = -g\,\ell_x^2/12$ nos apoios e $M^{+} = g\,\ell_x^2/24$ no vão. Para as rodas do TB-450, os momentos $m_x$ e $m_y$ ($\text{kNm/m}$) são obtidos por tabelas de Rüsch ou Pucher, ou pelo método das faixas equivalentes (modelo de viga contínua no Ftool, com a roda na posição mais desfavorável e a largura efetiva de distribuição). Os valores obtidos são majorados por $\varphi$ e combinados com os coeficientes de ponderação definidos nos parâmetros do projeto.
 
 #### 2.8.4 Dimensionamento da armadura (ELU)
 
-A seção é retangular, com $b_w = 100\text{ cm}$, altura útil $d = h - c_{\text{nom}} - \phi/2$ e $f_{cd} = 30/1{,}4 = 21{,}43\text{ MPa}$. A posição da linha neutra e a armadura de flexão são:
+A seção é retangular, com largura de cálculo de $1{,}00\text{ m}$, altura útil $d = h - c_{\text{nom}} - \phi/2$ e $f_{cd} = f_{ck}/1{,}4$. A posição da linha neutra e a armadura de flexão são:
 
 $$
 x = 1{,}25\,d\left[1 - \sqrt{1 - \frac{M_d}{0{,}425\,b_w\,d^{2}\,f_{cd}}}\,\right]
@@ -277,7 +282,7 @@ x = 1{,}25\,d\left[1 - \sqrt{1 - \frac{M_d}{0{,}425\,b_w\,d^{2}\,f_{cd}}}\,\righ
 A_s = \frac{M_d}{f_{yd}\,(d - 0{,}4\,x)}
 $$
 
-com $f_{yd} = 500/1{,}15 = 434{,}78\text{ MPa}$ e a verificação do domínio ($x/d \le 0{,}45$). A armadura não pode ser inferior à mínima, $A_{s,\min} = 0{,}15\%\,b_w\,h$ para $f_{ck} = 30\text{ MPa}$. A armadura de distribuição (longitudinal ao tráfego) deve respeitar:
+com $f_{yd} = f_{yk}/1{,}15$ e a verificação do domínio ($x/d \le 0{,}45$). A armadura não pode ser inferior à mínima, $A_{s,\min} = 0{,}15\%\,b_w\,h$. A armadura de distribuição (longitudinal ao tráfego) deve respeitar:
 
 $$
 A_{s,\text{dist}} \ge \max\left(0{,}20\,A_{s,\text{princ}};\ 0{,}9\text{ cm}^2/\text{m};\ 0{,}5\,A_{s,\min}\right)
@@ -343,16 +348,11 @@ As transversinas são as vigas transversais que ligam as longarinas. Na ponte de
 - **distribuir as cargas** entre as longarinas, colaborando com a laje na repartição transversal da carga móvel;
 - **servir de ponto de apoio** do tabuleiro durante o macaqueamento (elevação para a substituição dos aparelhos de apoio).
 
-**Tabela 2.1 — Dimensões das transversinas lidas no desenho de referência** (conferir no projeto de fôrma).
-
-| Transversina | Largura $b_w$ | Altura total (com a laje) | Função principal no dimensionamento |
-|---|---:|---:|---|
-| De vão | $30\text{ cm}$ | $175\text{ cm}$ | Travamento e cargas das rodas sobre ela |
-| De apoio | $40\text{ cm}$ | $200\text{ cm}$ | Macaqueamento e travamento sobre os pilares |
+As dimensões das transversinas de vão e de apoio são as definidas nos parâmetros do projeto; devem ser conferidas no projeto de fôrma.
 
 #### 2.9.1 Transversina de vão
 
-O modelo é de uma **viga biapoiada nas longarinas**, com vão teórico igual à distância entre eixos das longarinas e seção em T (a laje atua como mesa colaborante). As ações são o peso próprio da alma e as cargas das rodas do TB-450 posicionadas diretamente sobre a transversina, o que é uma hipótese a favor da segurança (modelos de grelha mostram que parte da carga é absorvida pela laje). Com duas rodas de eixo, afastadas de $e = 2{,}00\text{ m}$, e vão $\ell$, os esforços máximos para a carga de roda $P_d = \gamma_q\,Q_{\text{roda}}$ são:
+O modelo é de uma **viga biapoiada nas longarinas**, com vão teórico igual à distância entre eixos das longarinas e seção em T (a laje atua como mesa colaborante). As ações são o peso próprio da alma e as cargas das rodas do TB-450 posicionadas diretamente sobre a transversina, o que é uma hipótese a favor da segurança (modelos de grelha mostram que parte da carga é absorvida pela laje). Com duas rodas de eixo, afastadas conforme os parâmetros do projeto, e vão $\ell$, os esforços máximos para a carga de roda $P_d = \gamma_q\,Q_{\text{roda}}$ são:
 
 $$
 M_{d,\max} = M_{g,d} + \frac{P_d\,(\ell - e)}{2}
@@ -403,7 +403,7 @@ com $V_{sd} \le V_{Rd2}$ e $f_{ywd}$ limitado a $435\text{ MPa}$.
 2. Calcular as ações: peso próprio, carga das rodas majorada por $\varphi$ e força de macaqueamento.
 3. Obter $M_d$ e $V_d$ e conferir $V_d \le V_{Rd2}$.
 4. Dimensionar $A_s$ (superior e inferior), os estribos $A_{sw}/s$, a armadura de pele e a armadura mínima de torção.
-5. Detalhar a armadura na prancha e conferir os cobrimentos ($c_{\text{nom}} = 4\text{ cm}$, CAA III).
+5. Detalhar a armadura na prancha e conferir os cobrimentos e a classe de agressividade definidos nos parâmetros do projeto.
 ```
 
 ```{admonition} Entrega 4: Transversina
@@ -412,68 +412,19 @@ com $V_{sd} \le V_{Rd2}$ e $f_{ywd}$ limitado a $435\text{ MPa}$.
 A **Entrega 4** contempla o item **2.9** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
 ```
 
-### 2.10 Forças horizontais
+### Dimensionamento pilares e mesoestruturas
 
-- **Frenagem e aceleração:** maior valor entre 25% do peso do veículo-tipo ($0{,}25 \times 450\text{ kN} = 112{,}5\text{ kN}$) ou 5% da carga total de multidão na pista utilizável.
-- **Ação do vento:** pressão característica do vento aplicada à área projetada lateral da superestrutura (com e sem tráfego).
-- **Variação térmica e retração/fluência:** avaliação do deslocamento horizontal de origem térmica ($\Delta T$) transmitido aos apoios e ao topo dos pilares.
+Nesta etapa os discentes deverão dimensionar as estruturas que o meso sistema. Na ponte de referência, cada linha de apoio possui **dois pilares circulares**, um sob cada longarina, com aparelho de apoio de neoprene no topo e fundação em tubulão, conforme os parâmetros do projeto. Cada pilar é dimensionado à **flexo-compressão**. Considere os seguitnes carregamentos:
 
-### 2.11 Dimensionamento dos pilares e infraestrutura
+- **Frenagem e aceleração:** maior valor entre 25% do peso do veículo-tipo ou 5% da carga total de multidão na pista utilizável;
+- **Ação do vento:** pressão característica do vento aplicada à área projetada lateral da superestrutura (com e sem tráfego);
+- **Variação térmica e retração/fluência:** avaliação do deslocamento horizontal de origem térmica ($\Delta T$) transmitido aos apoios e ao topo dos pilares;
+- **Água:** Desprezado visto que não tem curso d'água no projeto;
+- **Solo:** Considerado na altura conforme corte enviado.
 
-Na ponte de referência, cada linha de apoio possui **dois pilares circulares** de $\phi = 1{,}20\text{ m}$ e $H = 12{,}00\text{ m}$, um sob cada longarina, com aparelho de apoio de neoprene no topo e fundação em tubulão. Cada pilar é dimensionado à **flexo-compressão**, com a seção de concreto $A_c = \pi D^2/4 = 1{,}131\text{ m}^2$.
+Como o neoprene não impede o deslocamento horizontal do topo, o pilar é modelado como um **console engastado na base** (tubulão) e livre no topo. A força horizontal total pode ser distribuída entre os apoios proporcionalmente à rigidez ds pilares somente. Tal processo é válido para a direção longitudinal e direção tarnsversal.
 
-#### 2.11.1 Modelo estrutural
-
-Como o neoprene não impede o deslocamento horizontal do topo, o pilar é modelado como um **console engastado na base** (tubulão) e livre no topo. A força horizontal total pode ser distribuída entre os apoios proporcionalmente à rigidez dos aparelhos de neoprene, $K = G\,A/h_n$, em que $G$ é o módulo de elasticidade transversal, $A$ a área em planta e $h_n$ a altura do aparelho. Para o console, o comprimento de flambagem é $\ell_e = 2H = 24{,}00\text{ m}$.
-
-#### 2.11.2 Solicitações
-
-**Força normal:** reação máxima da longarina (permanente mais trem-tipo majorado) mais o peso próprio do pilar, $G_{\text{pil}} = \gamma_c\,A_c\,H = 25 \cdot 1{,}131 \cdot 12{,}00 = 339{,}3\text{ kN}$.
-
-$$
-N_d = \gamma_g\,(N_{g,k} + G_{\text{pil}}) + \gamma_q\,N_{q,k}
-$$
-
-**Momento fletor na base:** produzido pelas forças horizontais do item 2.10 (frenagem, vento e variação térmica), aplicadas no topo do pilar:
-
-$$
-M_{1d} = \gamma_q \cdot \left(H_{\text{fren}} + H_{\text{vento}} + H_{\text{térm}}\right) \cdot H
-$$
-
-Devem ser verificadas pelo menos duas combinações: **$N_{\max}$ com o momento associado** e **$M_{\max}$ com $N_{\min}$** (somente ações permanentes, $\gamma_g = 1{,}0$), pois a menor compressão pode ser a mais desfavorável para a armadura. As ações variáveis secundárias são combinadas com os fatores $\psi_0$ da NBR 8681/NBR 7187.
-
-#### 2.11.3 Esbeltez e efeitos de 2ª ordem
-
-Para a seção circular, o raio de giração é $i = D/4 = 0{,}30\text{ m}$ e o índice de esbeltez é:
-
-$$
-\lambda = \frac{\ell_e}{i} = \frac{4\,\ell_e}{D} = \frac{4 \cdot 24{,}00}{1{,}20} = 80
-$$
-
-Os efeitos locais de 2ª ordem podem ser desprezados se $\lambda \le \lambda_1$, com:
-
-$$
-\lambda_1 = \frac{25 + 12{,}5\,e_1/h}{\alpha_b}, \qquad 35 \le \lambda_1 \le 90
-$$
-
-em que $e_1 = M_{1d}/N_d$ é a excentricidade de 1ª ordem, $h = D$ e $\alpha_b = 1{,}0$ (valor a favor da segurança para pilar em balanço). Como $\lambda = 80 > \lambda_1$, os efeitos de 2ª ordem precisam ser considerados. Para $\lambda \le 90$, pode-se utilizar o **método do pilar-padrão com curvatura aproximada** (NBR 6118, item 15.8.3.3.2 [[4]](#ref-4)):
-
-$$
-M_{d,\text{tot}} = \alpha_b\,M_{1d} + N_d\,\frac{\ell_e^{\,2}}{10}\,\frac{1}{r} \ge M_{1d}
-\qquad
-\frac{1}{r} = \frac{0{,}005}{h\,(\nu + 0{,}5)} \le \frac{0{,}005}{h}
-\qquad
-\nu = \frac{N_d}{A_c\,f_{cd}}
-$$
-
-O momento de 1ª ordem também deve respeitar o mínimo $M_{1d,\min} = N_d\,(0{,}015 + 0{,}03\,h)$, com $h$ em metros.
-
-```{admonition} Entrega 5: Esforços em pilares
-:class: destaque-verde
-
-A **Entrega 5** contempla os itens **2.10 e 2.11.1 a 2.11.3** do roteiro de projeto. Os arquivos obrigatórios e os critérios de avaliação seguem o padrão da Entrega 1 e serão detalhados pelo professor.
-```
-
+Após 
 #### 2.11.4 Armadura longitudinal e transversal
 
 Com os esforços de cálculo, determina-se a armadura por **ábacos de flexo-compressão reta para seção circular**, entrando com:
@@ -518,7 +469,7 @@ $$
 
 #### 2.11.5 Verificação da fundação
 
-A fundação do pilar é em **tubulão com base alargada** de $\phi = 3{,}00\text{ m}$ e altura de base de $1{,}35\text{ m}$, conforme o corte longitudinal. Na cota da base, as tensões no solo são verificadas com:
+A fundação do pilar é em **tubulão com base alargada**, conforme as dimensões definidas nos parâmetros do projeto e o corte longitudinal. Na cota da base, as tensões no solo são verificadas com:
 
 $$
 \sigma_{\max,\min} = \frac{N_{\text{base}}}{A_b} \pm \frac{M_{\text{base}}}{W_b} \le \sigma_{\text{adm}}
@@ -528,7 +479,7 @@ A_b = \frac{\pi D_b^{2}}{4}
 W_b = \frac{\pi D_b^{3}}{32}
 $$
 
-em que $N_{\text{base}}$ inclui o peso do fuste e da base, e $M_{\text{base}}$ acrescenta ao momento na base do pilar o efeito da força horizontal ao longo do fuste. Para $D_b = 3{,}00\text{ m}$, $A_b = 7{,}07\text{ m}^2$ e $W_b = 2{,}65\text{ m}^3$. Deve-se ainda verificar o ângulo de abertura da base do tubulão e, quando necessário, o fuste e a armadura da base conforme a NBR 6122.
+em que $N_{\text{base}}$ inclui o peso do fuste e da base, e $M_{\text{base}}$ acrescenta ao momento na base do pilar o efeito da força horizontal ao longo do fuste. Deve-se ainda verificar o ângulo de abertura da base do tubulão e, quando necessário, o fuste e a armadura da base conforme a NBR 6122.
 
 ```{admonition} Entrega 6: Detalhamento dos pilares
 :class: destaque-verde

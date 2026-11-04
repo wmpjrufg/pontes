@@ -20,7 +20,7 @@ extensions = [
 # Liberação da solução do trabalho: altere False para True após cada entrega.
 # Uma linha removida ou comentada equivale a False. Depois, gere/publique o site.
 solucao_entregas_liberadas = {
-    1: False,  # Determinação das ações permanentes e variáveis
+    1: True,  # Determinação das ações permanentes e variáveis
     2: False,  # Fadiga e armadura final da viga
     3: False,  # Tabuleiro
     4: False,  # Transversina

@@ -14,7 +14,8 @@ O trabalho prático do semestre consiste no dimensionamento de uma ponte de conc
 
 **Geometria da ponte de referência:**
 
-- Vão principal central: $25{,}00\text{ m}$; balanços/extensões nas extremidades: $4{,}50\text{ m}$ e $3{,}00\text{ m}$ (corresponde a laje de aproximação), conforme o corte longitudinal.
+- Vão principal central: $25{,}00\text{ m}$; balanço na extremidade com comprimento de $4{,}50\text{ m}$, conforme o corte longitudinal.
+- Laje de aproximação: comprimento de $4{,}00\text{ m}$, largura de $9{,}00\text{ m}$, igual à largura total do tabuleiro, e espessura de $22\text{ cm}$.
 - Espaçamento entre transversinas: $12{,}50\text{ m}$.
 - Cada linha de apoio tem dois pilares circulares, um sob cada longarina, com diâmetro de $1{,}20\text{ m}$ e altura de $12{,}00\text{ m}$.
 - Fundação em tubulão de concreto armado com base alargada de diâmetro $3{,}00\text{ m}$ e altura de $1{,}35\text{ m}$.

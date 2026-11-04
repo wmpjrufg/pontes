@@ -16,15 +16,14 @@ O trabalho prático do semestre consiste no dimensionamento de uma ponte de conc
 
 - Vão principal central: $25{,}00\text{ m}$; balanço na extremidade com comprimento de $4{,}50\text{ m}$, conforme o corte longitudinal.
 - Laje de aproximação: comprimento de $4{,}00\text{ m}$, largura de $9{,}00\text{ m}$, igual à largura total do tabuleiro, e espessura de $22\text{ cm}$.
-- Espaçamento entre transversinas: $12{,}50\text{ m}$.
+- Existem três transversinas: uma no meio do vão e uma sobre cada apoio. Todas possuem comprimento de $4{,}75\text{ m}$ e altura de $1{,}65\text{ m}$; a transversina de vão possui espessura de $30\text{ cm}$ e as transversinas de apoio possuem espessura de $40\text{ cm}$.
 - Cada linha de apoio tem dois pilares circulares, um sob cada longarina, com diâmetro de $1{,}20\text{ m}$ e altura de $12{,}00\text{ m}$.
 - Fundação em tubulão de concreto armado com base alargada de diâmetro $3{,}00\text{ m}$ e altura de $1{,}35\text{ m}$.
-- Transversina de vão: largura de $30\text{ cm}$ e altura total de $175\text{ cm}$; transversina de apoio: largura de $40\text{ cm}$ e altura total de $200\text{ cm}$;
 - Possui alas abertas e contenção na extremidade da ponte.
 
 **Materiais e durabilidade:**
 
-- Concreto: $f_{ck} = 30\text{ MPa}$ e peso específico $\gamma_c = 25\text{ kN/m}^3$.
+- Concreto: $f_{ck} = 30\text{ MPa}$, peso específico $\gamma_c = 25\text{ kN/m}^3$ e agregado graúdo de granito. Para $\alpha_E=1{,}0$, adotar módulo de elasticidade inicial $E_{ci}=30{,}67\text{ GPa}$ e módulo secante $E_{cs}=26{,}84\text{ GPa}$ nas análises estruturais.
 - Aço: CA-50, com $f_{yk} = 500\text{ MPa}$.
 - Cobrimento nominal: $c_{\text{nom}} = 4\text{ cm}$.
 - Classe de agressividade ambiental: CAA III (forte / industrial ou marinha).

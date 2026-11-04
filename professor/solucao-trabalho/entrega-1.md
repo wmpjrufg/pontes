@@ -161,3 +161,99 @@ P_{\mathrm{ext}}
 =89{,}00+99{,}00
 =\boxed{188{,}00\text{ kN}}.
 $$
+
+### 4. Peso próprio das transversinas
+
+O projeto possui uma transversina em cada seção indicada: uma no meio do
+vão e uma sobre cada um dos dois apoios, totalizando três peças. Todas as
+transversinas possuem comprimento de $4{,}75\text{ m}$ e altura de
+$1{,}65\text{ m}$. A espessura é de $0{,}30\text{ m}$ no meio do vão e de
+$0{,}40\text{ m}$ nos apoios.
+
+O peso de cada transversina é dividido igualmente entre as duas longarinas e
+representado por uma carga concentrada na seção em que a peça está
+localizada.
+
+#### 4.1 Transversina do meio do vão
+
+$$
+V_{\mathrm{tr,vão}}
+=4{,}75\cdot1{,}65\cdot0{,}30
+=2{,}35125\text{ m}^3.
+$$
+
+$$
+G_{\mathrm{tr,vão}}
+=2{,}35125\cdot25
+=58{,}78125\text{ kN}.
+$$
+
+Logo, a carga concentrada aplicada em cada longarina no meio do vão é:
+
+$$
+P_{\mathrm{tr,vão}}
+=\frac{58{,}78125}{2}
+=\boxed{29{,}39\text{ kN}}.
+$$
+
+#### 4.2 Transversinas dos apoios
+
+Para cada transversina de apoio:
+
+$$
+V_{\mathrm{tr,apoio}}
+=4{,}75\cdot1{,}65\cdot0{,}40
+=3{,}135\text{ m}^3.
+$$
+
+$$
+G_{\mathrm{tr,apoio}}
+=3{,}135\cdot25
+=78{,}375\text{ kN}.
+$$
+
+Assim, a carga concentrada aplicada em cada longarina, sobre cada apoio, é:
+
+$$
+P_{\mathrm{tr,apoio}}
+=\frac{78{,}375}{2}
+=\boxed{39{,}19\text{ kN}}.
+$$
+
+### 5. Propriedades do concreto
+
+Adota-se concreto com $f_{ck}=30\text{ MPa}$, peso específico de
+$25\text{ kN/m}^3$ e agregado graúdo de granito. Para granito, o coeficiente
+de correção do módulo de elasticidade é $\alpha_E=1{,}0$.
+
+O módulo de elasticidade inicial é:
+
+$$
+\begin{aligned}
+E_{ci}
+&=\alpha_E\,5600\sqrt{f_{ck}}\\
+&=1{,}0\cdot5600\sqrt{30}\\
+&=30\,672\text{ MPa}\\
+&=\boxed{30{,}67\text{ GPa}}.
+\end{aligned}
+$$
+
+Para a análise estrutural, utiliza-se o módulo de elasticidade secante. Para
+$f_{ck}=30\text{ MPa}$:
+
+$$
+\alpha_i=0{,}8+0{,}2\frac{f_{ck}}{80}
+=0{,}8+0{,}2\frac{30}{80}
+=0{,}875,
+$$
+
+$$
+E_{cs}=\alpha_iE_{ci}
+=0{,}875\cdot30\,672
+=26\,838\text{ MPa}
+=\boxed{26{,}84\text{ GPa}}.
+$$
+
+Portanto, no modelo estrutural, deve-se cadastrar o material com
+$E=E_{cs}=26{,}84\text{ GPa}$, equivalente a $26\,838\text{ MPa}$ ou
+$2{,}6838\cdot10^7\text{ kN/m}^2$.

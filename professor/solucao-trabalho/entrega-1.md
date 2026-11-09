@@ -82,7 +82,7 @@ g_{\mathrm{long}}
 &=g_{\mathrm{est}}+g_{\mathrm{bar}}+g_{\mathrm{asf}}
   +g_{\mathrm{recap}}+g_{\mathrm{gc}}\\
 &=53{,}3625+5{,}500+8{,}760+8{,}200+0{,}100\\
-&=\boxed{75{,}9225\text{ kN/m}}.
+&=75{,}9225\text{ kN/m}.
 \end{aligned}
 $$
 
@@ -119,7 +119,7 @@ Consequentemente, a carga concentrada aplicada em cada longarina é:
 $$
 P_{\mathrm{ala}}
 =\frac{178{,}00}{2}
-=\boxed{89{,}00\text{ kN}}.
+=89{,}00\text{ kN}.
 $$
 
 #### 3.2 Laje de aproximação
@@ -147,7 +147,7 @@ Distribuindo esse peso igualmente entre as duas longarinas:
 $$
 P_{\mathrm{lap}}
 =\frac{198{,}00}{2}
-=\boxed{99{,}00\text{ kN}}.
+=99{,}00\text{ kN}.
 $$
 
 #### 3.3 Carga concentrada resultante por longarina
@@ -159,7 +159,7 @@ $$
 P_{\mathrm{ext}}
 =P_{\mathrm{ala}}+P_{\mathrm{lap}}
 =89{,}00+99{,}00
-=\boxed{188{,}00\text{ kN}}.
+=188{,}00\text{ kN}.
 $$
 
 ### 4. Peso próprio das transversinas
@@ -193,7 +193,7 @@ Logo, a carga concentrada aplicada em cada longarina no meio do vão é:
 $$
 P_{\mathrm{tr,vão}}
 =\frac{58{,}78125}{2}
-=\boxed{29{,}39\text{ kN}}.
+=29{,}39\text{ kN}.
 $$
 
 #### 4.2 Transversinas dos apoios
@@ -217,7 +217,7 @@ Assim, a carga concentrada aplicada em cada longarina, sobre cada apoio, é:
 $$
 P_{\mathrm{tr,apoio}}
 =\frac{78{,}375}{2}
-=\boxed{39{,}19\text{ kN}}.
+=39{,}19\text{ kN}.
 $$
 
 ### 5. Propriedades do concreto
@@ -234,7 +234,7 @@ E_{ci}
 &=\alpha_E\,5600\sqrt{f_{ck}}\\
 &=1{,}0\cdot5600\sqrt{30}\\
 &=30\,672\text{ MPa}\\
-&=\boxed{30{,}67\text{ GPa}}.
+&=30{,}67\text{ GPa}.
 \end{aligned}
 $$
 
@@ -251,9 +251,170 @@ $$
 E_{cs}=\alpha_iE_{ci}
 =0{,}875\cdot30\,672
 =26\,838\text{ MPa}
-=\boxed{26{,}84\text{ GPa}}.
+=26{,}84\text{ GPa}.
 $$
 
 Portanto, no modelo estrutural, deve-se cadastrar o material com
 $E=E_{cs}=26{,}84\text{ GPa}$, equivalente a $26\,838\text{ MPa}$ ou
 $2{,}6838\cdot10^7\text{ kN/m}^2$.
+
+### 6. Determinação do trem-tipo da longarina
+
+O trem-tipo da longarina é obtido posicionando o veículo TB-450 na posição
+transversal mais desfavorável e calculando a parcela das cargas móveis
+transferida para a longarina estudada. Como a ponte é simétrica, as duas
+longarinas possuem o mesmo trem-tipo.
+
+#### 6.1 Linha de influência transversal
+
+Adota-se a origem $x=0$ no eixo da longarina estudada e $x=5{,}25\text{ m}$
+no eixo da outra longarina. A ordenada da linha de influência da reação
+na longarina estudada é:
+
+$$
+\eta(x)=1-\frac{x}{5{,}25}.
+$$
+
+As cargas que resultam em ordenadas negativas produzem efeito favorável na
+longarina estudada e, nesta determinação simplificada, são desprezadas.
+
+A face interna da barreira do lado estudado encontra-se em:
+
+$$
+x_{\mathrm{ini}}=-(1{,}875-0{,}40)=-1{,}475\text{ m}.
+$$
+
+O TB-450 é encostado nessa face. Como o centro da roda externa está a
+$0{,}50\text{ m}$ da lateral do veículo, as rodas de cada eixo ficam em:
+
+$$
+x_1=-1{,}475+0{,}50=-0{,}975\text{ m},
+$$
+
+$$
+x_2=-0{,}975+2{,}00=1{,}025\text{ m}.
+$$
+
+As principais ordenadas para a conta manual são:
+
+| Posição transversal | $x$ (m) | Ordenada $\eta$ |
+|---|---:|---:|
+| Face interna da barreira esquerda | $-1{,}475$ | $1{,}2810$ |
+| Roda 1 | $-0{,}975$ | $1{,}1857$ |
+| Longarina estudada | $0{,}00$ | $1{,}0000$ |
+| Roda 2 | $1{,}025$ | $0{,}8048$ |
+| Lateral direita do veículo | $1{,}525$ | $0{,}7095$ |
+| Segunda longarina | $5{,}25$ | $0{,}0000$ |
+| Face interna da barreira direita | $6{,}725$ | $-0{,}2810$ |
+
+#### 6.2 Carga concentrada por eixo
+
+A carga transferida à longarina por um eixo do TB-450 é obtida com as duas
+rodas de $75\text{ kN}$:
+
+$$
+\begin{aligned}
+P
+&=75\eta_1+75\eta_2\\
+&=75\cdot1{,}1857+75\cdot0{,}8048\\
+&=149{,}29\text{ kN}.
+\end{aligned}
+$$
+
+Portanto, o trem-tipo possui três cargas concentradas de $149{,}29\text{ kN}$,
+espaçadas longitudinalmente de $1{,}50\text{ m}$. No comprimento de
+$6{,}00\text{ m}$ do veículo, os eixos ficam a $1{,}50\text{ m}$,
+$3{,}00\text{ m}$ e $4{,}50\text{ m}$ da extremidade dianteira adotada.
+
+#### 6.3 Carga de multidão fora do veículo
+
+Fora do comprimento ocupado pelo veículo, a multidão atua em toda a largura
+da pista. Considera-se somente a área positiva da linha de influência, entre
+$x=-1{,}475\text{ m}$ e $x=5{,}25\text{ m}$:
+
+$$
+A_I=\frac{1{,}2810\cdot6{,}725}{2}=4{,}3072\text{ m}.
+$$
+
+Assim, a carga linear sobre a longarina é:
+
+$$
+q_1=5{,}00\cdot4{,}3072=21{,}54\text{ kN/m}.
+$$
+
+#### 6.4 Carga de multidão ao lado do veículo
+
+No trecho longitudinal de $6{,}00\text{ m}$ ocupado pelo veículo, a multidão
+atua somente na parte da pista não ocupada por ele. Como o veículo está
+encostado na borda esquerda, considera-se a área positiva entre sua lateral
+direita, em $x=1{,}525\text{ m}$, e a segunda longarina, em
+$x=5{,}25\text{ m}$:
+
+$$
+A_{II}=\frac{0{,}7095\cdot3{,}725}{2}=1{,}3215\text{ m}.
+$$
+
+Logo:
+
+$$
+q_2=5{,}00\cdot1{,}3215=6{,}61\text{ kN/m}.
+$$
+
+#### 6.5 Coeficientes dinâmicos
+
+Para o cálculo do Coeficiente de Impacto Vertical, considera-se somente o vão
+central de $25{,}00\text{ m}$:
+
+$$
+\begin{aligned}
+CIV
+&=1+1{,}06\left(\frac{20}{LIV+50}\right)\\
+&=1+1{,}06\left(\frac{20}{25+50}\right)\\
+&=1{,}2827.
+\end{aligned}
+$$
+
+Para duas faixas de tráfego:
+
+$$
+CNF=1-0{,}05(2-2)=1{,}0000.
+$$
+
+Como a ponte é de concreto:
+
+$$
+CIA=1{,}25.
+$$
+
+O fator dinâmico combinado é:
+
+$$
+F_D=CIV\cdot CNF\cdot CIA
+=1{,}2827\cdot1{,}0000\cdot1{,}25
+=1{,}6033.
+$$
+
+#### 6.6 Trem-tipo final da longarina
+
+Aplicando o fator dinâmico combinado:
+
+$$
+P_d=149{,}29\cdot1{,}6033=239{,}35\text{ kN},
+$$
+
+$$
+q_{1,d}=21{,}54\cdot1{,}6033=34{,}53\text{ kN/m},
+$$
+
+$$
+q_{2,d}=6{,}61\cdot1{,}6033=10{,}59\text{ kN/m}.
+$$
+
+O trem-tipo longitudinal final de cada longarina é composto por:
+
+- três cargas concentradas $P_d=239{,}35\text{ kN}$, espaçadas de
+  $1{,}50\text{ m}$;
+- carga distribuída $q_{2,d}=10{,}59\text{ kN/m}$ no trecho de
+  $6{,}00\text{ m}$ ocupado pelo veículo;
+- carga distribuída $q_{1,d}=34{,}53\text{ kN/m}$ fora do comprimento
+  ocupado pelo veículo.

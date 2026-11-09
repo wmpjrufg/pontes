@@ -15,6 +15,7 @@ O trabalho prático do semestre consiste no dimensionamento de uma ponte de conc
 **Geometria da ponte de referência:**
 
 - Vão principal central: $25{,}00\text{ m}$; balanço na extremidade com comprimento de $4{,}50\text{ m}$, conforme o corte longitudinal.
+- Seção transversal: largura total de $9{,}00\text{ m}$ medida pelas faces externas das barreiras, balanços transversais de $1{,}875\text{ m}$ medidos da face externa até o eixo de cada longarina, distância de $5{,}25\text{ m}$ entre longarinas, barreiras com $0{,}40\text{ m}$ de largura e pista útil de $8{,}20\text{ m}$.
 - Laje de aproximação: comprimento de $4{,}00\text{ m}$, largura de $9{,}00\text{ m}$, igual à largura total do tabuleiro, e espessura de $22\text{ cm}$.
 - Existem três transversinas: uma no meio do vão e uma sobre cada apoio. Todas possuem comprimento de $4{,}75\text{ m}$ e altura de $1{,}65\text{ m}$; a transversina de vão possui espessura de $30\text{ cm}$ e as transversinas de apoio possuem espessura de $40\text{ cm}$.
 - Cada linha de apoio tem dois pilares circulares, um sob cada longarina, com diâmetro de $1{,}20\text{ m}$ e altura de $12{,}00\text{ m}$.
@@ -35,8 +36,9 @@ O trabalho prático do semestre consiste no dimensionamento de uma ponte de conc
 
 **Ações variáveis e coeficientes:**
 
-- Veículo-tipo TB-450, conforme ABNT NBR 7188:2024 [[2]](#ref-2): três eixos de $150\text{ kN}$ (ou $75\text{ kN}$ por roda), espaçados longitudinalmente de $1{,}50\text{ m}$; distância transversal entre as rodas de um eixo de $2{,}00\text{ m}$; área de contato de cada roda de $0{,}20\text{ m} \times 0{,}50\text{ m}$.
+- Veículo-tipo TB-450, conforme ABNT NBR 7188:2024 [[2]](#ref-2): peso total de $450\text{ kN}$; comprimento de $6{,}00\text{ m}$ e largura de $3{,}00\text{ m}$; três eixos de $150\text{ kN}$, com duas rodas de $75\text{ kN}$ por eixo; eixos espaçados longitudinalmente de $1{,}50\text{ m}$; distância transversal de $2{,}00\text{ m}$ entre os centros das rodas, restando $0{,}50\text{ m}$ de cada lado do veículo; área de contato de cada roda de $0{,}20\text{ m} \times 0{,}50\text{ m}$.
 - Carga de multidão na pista de rolamento: $5{,}0\text{ kN/m}^2$.
+- Número de faixas de tráfego considerado no cálculo do CNF: duas.
 - Carga nos passeios: $3{,}0\text{ kN/m}^2$ concomitante ou $5{,}0\text{ kN/m}^2$ para dimensionamento local.
 - Coeficiente de Impacto Vertical (CIV) e Coeficiente de Número de Faixas (CNF): conforme ABNT NBR 7188:2024 [[2]](#ref-2). Para vãos inferiores a $10{,}0\text{ m}$, adotar $CIV = 1{,}35$.
 - Coeficiente de Impacto Adicional: $CIA = 1{,}25$ para estruturas de concreto. O fator dinâmico combinado é $F_D = CIV \cdot CNF \cdot CIA$; em lajes e transversinas, que não recebem o CNF, usar $\varphi = CIV \cdot CIA$.

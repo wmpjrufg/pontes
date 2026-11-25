@@ -418,3 +418,13 @@ O trem-tipo longitudinal final de cada longarina é composto por:
   $6{,}00\text{ m}$ ocupado pelo veículo;
 - carga distribuída $q_{1,d}=34{,}53\text{ kN/m}$ fora do comprimento
   ocupado pelo veículo.
+
+### 7. Modelos no Ftool
+
+Os modelos da longarina usados nesta entrega estão disponíveis para download:
+
+- Carga permanente, com $g_{\mathrm{long}}=75{,}92\text{ kN/m}$ e as cargas
+  concentradas da extremidade do balanço e das transversinas:
+  {download}`CargasPermanentes.ftl <../_static/arquivos/entrega1/CargasPermanentes.ftl>`.
+- Trem-tipo longitudinal da longarina, para obter as envoltórias de esforços:
+  {download}`TremTipo-Long.ftl <../_static/arquivos/entrega1/TremTipo-Long.ftl>`.

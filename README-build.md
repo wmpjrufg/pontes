@@ -45,7 +45,8 @@ O workflow em `.github/workflows/pages.yml` builda o site e publica no GitHub Pa
 
 ## Solução do trabalho: liberação por entrega
 
-A página **Solução do trabalho** aparece no menu da disciplina. Para publicar
+A página **Solução do trabalho** aparece no menu da disciplina, com uma
+subpágina por entrega. Para publicar
 uma parte, altere a entrega correspondente de `False` para `True` em
 `source/conf.py`, no dicionário `solucao_entregas_liberadas`, e reconstrua o site
 (ou publique pelo fluxo de push em `main`). Todas começam ocultas.

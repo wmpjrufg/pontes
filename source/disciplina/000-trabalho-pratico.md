@@ -174,7 +174,8 @@ O número de pranchas depende do projeto de cada grupo; o DWG deve conter todos 
 ### 2.6 Envoltória final de esforços
 
 - Combinação de ações no Estado Limite Último (ELU), conforme NBR 7187 e NBR 6118, utilizando os coeficientes de ponderação definidos nos parâmetros do projeto.
-- Traçado dos diagramas envoltórios de flexão ($M_{sd,\text{máx}}$ e $M_{sd,\text{mín}}$) e de cortante ($V_{sd,\text{máx}}$).
+- Traçado dos diagramas envoltórios de flexão ($M_{sd,\text{máx}}$ e $M_{sd,\text{mín}}$).
+- Tabela de momentos fletores nas seções de interesse: apoio do balanço (à esquerda e à direita), $1/4$ do vão e meio do vão. Como a ponte é simétrica, basta analisar a longarina até o meio do vão.
 
 ### 2.7 Dimensionamento da longarina com verificação à fadiga
 
@@ -182,11 +183,6 @@ O número de pranchas depende do projeto de cada grupo; o DWG deve conter todos 
 
 - Cálculo da armadura longitudinal $A_s$ para atender aos momentos $M_{sd,\text{máx}}$ ao longo da viga.
 - Verificação da capacidade resistente da seção em "T" ou retangular.
-
-**Dimensionamento ao cisalhamento (ELU):**
-
-- Verificação da compressão diagonal do concreto ($V_{sd} \le V_{rd2}$).
-- Cálculo dos estribos $A_{sw}/s$ (modelo de cálculo I ou II da NBR 6118).
 
 **Verificação à fadiga (ELS-FAT):**
 

@@ -8,14 +8,13 @@ Compare hipóteses, unidades e etapas de cálculo antes de comparar os resultado
 Uma escolha diferente de geometria ou de modelo estrutural exige recalcular as
 etapas seguintes.
 
-<!-- solucao:entrega-1 -->
+```{toctree}
+:maxdepth: 1
 
-<!-- solucao:entrega-2 -->
-
-<!-- solucao:entrega-3 -->
-
-<!-- solucao:entrega-4 -->
-
-<!-- solucao:entrega-5 -->
-
-<!-- solucao:entrega-6 -->
+000-solucao-entrega-1
+000-solucao-entrega-2
+000-solucao-entrega-3
+000-solucao-entrega-4
+000-solucao-entrega-5
+000-solucao-entrega-6
+```

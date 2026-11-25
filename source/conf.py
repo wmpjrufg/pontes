@@ -21,7 +21,7 @@ extensions = [
 # Uma linha removida ou comentada equivale a False. Depois, gere/publique o site.
 solucao_entregas_liberadas = {
     1: True,  # Determinação das ações permanentes e variáveis
-    2: False,  # Fadiga e armadura final da viga
+    2: True,  # Fadiga e armadura final da viga
     3: False,  # Tabuleiro
     4: False,  # Transversina
     5: False,  # Esforços em pilares
@@ -52,6 +52,8 @@ html_theme_options = {
     "use_repository_button": True,
     "use_download_button": False,
     "home_page_in_toc": True,
+    # Mantém as entregas da solução do trabalho visíveis no menu lateral.
+    "show_navbar_depth": 2,
 }
 
 html_title = "Pontes"

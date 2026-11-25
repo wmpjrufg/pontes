@@ -27,4 +27,9 @@ aulas/001-introducao
 aulas/002-metodos-construtivos
 aulas/003-lancamento-estrutural
 aulas/004-carregamentos
+aulas/005-tabuleiro
+aulas/006-transversina
+aulas/007-mesoestrutura-acoes
+aulas/008-pilares
+aulas/009-fundacoes-tubuloes
 ```

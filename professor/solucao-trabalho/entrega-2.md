@@ -362,22 +362,77 @@ como no Ftool.
 ### 6. Momentos para a verificação à fadiga
 
 Para a verificação à fadiga, item 2.7, usa-se a combinação frequente com
-$\psi_1=0{,}5$, valor adotado pela NBR 6118 para vigas de pontes rodoviárias:
+$\psi_1=0{,}5$, valor adotado pela NBR 6118 para vigas de pontes rodoviárias.
+Como o veículo passa e sai da ponte, cada seção oscila entre dois valores:
 
 $$
-M_{\mathrm{fad}}=M_g+\psi_1\,M_q.
+M_{\mathrm{fad,máx}}=M_g+\psi_1\,M_{q,\mathrm{máx}}
+\qquad\qquad
+M_{\mathrm{fad,mín}}=M_g+\psi_1\,M_{q,\mathrm{mín}}
+\qquad\qquad
+\Delta M_{\mathrm{fad}}=M_{\mathrm{fad,máx}}-M_{\mathrm{fad,mín}} .
 $$
+
+Todos os momentos entram **com sinal** (positivo traciona a fibra inferior), e
+máximo e mínimo são algébricos: num momento negativo, o "máximo" é o de menor
+módulo. O sinal é o que permite identificar a **fadiga alternada**: se
+$M_{\mathrm{fad,máx}}$ e $M_{\mathrm{fad,mín}}$ têm sinais opostos, a mesma barra
+passa de tracionada a comprimida a cada passagem do veículo. Se têm o mesmo
+sinal, a face tracionada é sempre a mesma.
+
+#### 6.1 Seção A (apoio do balanço)
+
+Da Tabela 2.1: $M_g=-1\,614{,}69\text{ kN·m}$,
+$M_{q,\mathrm{máx}}=0$ e $M_{q,\mathrm{mín}}=-2\,261{,}57\text{ kN·m}$.
+
+$$
+\begin{aligned}
+M_{\mathrm{fad,máx},A}&=-1\,614{,}69+0{,}5\cdot0=-1\,614{,}69\text{ kN·m}\\
+M_{\mathrm{fad,mín},A}&=-1\,614{,}69+0{,}5\cdot(-2\,261{,}57)=-1\,614{,}69-1\,130{,}78=-2\,745{,}47\text{ kN·m}\\
+\Delta M_{\mathrm{fad},A}&=(-1\,614{,}69)-(-2\,745{,}47)=1\,130{,}78\text{ kN·m}
+\end{aligned}
+$$
+
+Os dois valores são negativos: **não há alternância**. A armadura superior fica
+sempre tracionada, oscilando entre os efeitos de $-1\,614{,}69$ e
+$-2\,745{,}47\text{ kN·m}$.
+
+#### 6.2 Seção B ($L/4$)
+
+Da Tabela 2.1: $M_g=+2\,925{,}59\text{ kN·m}$,
+$M_{q,\mathrm{máx}}=+4\,527{,}70\text{ kN·m}$ e
+$M_{q,\mathrm{mín}}=-1\,783{,}58\text{ kN·m}$.
+
+$$
+\begin{aligned}
+M_{\mathrm{fad,máx},B}&=+2\,925{,}59+0{,}5\cdot(+4\,527{,}70)=2\,925{,}59+2\,263{,}85=+5\,189{,}44\text{ kN·m}\\
+M_{\mathrm{fad,mín},B}&=+2\,925{,}59+0{,}5\cdot(-1\,783{,}58)=2\,925{,}59-891{,}79=+2\,033{,}80\text{ kN·m}\\
+\Delta M_{\mathrm{fad},B}&=(+5\,189{,}44)-(+2\,033{,}80)=3\,155{,}64\text{ kN·m}
+\end{aligned}
+$$
+
+Embora o trem-tipo produza momento negativo em B (veículo nos balanços), a carga
+permanente mantém o momento de fadiga positivo nos dois extremos: **não há
+alternância**. A armadura inferior fica sempre tracionada. Repare que, na fadiga,
+a permanente entra sem majoração e a carga móvel com $\psi_1 = 0{,}5$; por isso
+a seção fica mais longe da inversão do que no ELU ($M_{sd,\mathrm{mín}} = 250{,}2\text{ kN·m}$).
+
+#### 6.3 Resumo
 
 **Tabela 2.2.** Momentos da combinação de fadiga, em kN·m.
 
 | Momento | A | B ($L/4$) | C ($L/2$) |
 |---|---:|---:|---:|
-| $M_{\mathrm{fad,máx}}=M_g+0{,}5\,M_{q,\mathrm{máx}}$ | $-1\,614{,}7$ | $5\,189{,}4$ | $7\,518{,}7$ |
-| $M_{\mathrm{fad,mín}}=M_g+0{,}5\,M_{q,\mathrm{mín}}$ | $-2\,745{,}5$ | $2\,033{,}8$ | $3\,847{,}5$ |
-| $\Delta M_{\mathrm{fad}}$ | $1\,130{,}8$ | $3\,155{,}6$ | $3\,671{,}3$ |
+| $M_g$ | $-1\,614{,}7$ | $+2\,925{,}6$ | $+4\,500{,}2$ |
+| $M_{\mathrm{fad,máx}}=M_g+0{,}5\,M_{q,\mathrm{máx}}$ | $-1\,614{,}7$ | $+5\,189{,}4$ | $+7\,518{,}7$ |
+| $M_{\mathrm{fad,mín}}=M_g+0{,}5\,M_{q,\mathrm{mín}}$ | $-2\,745{,}5$ | $+2\,033{,}8$ | $+3\,847{,}5$ |
+| $\Delta M_{\mathrm{fad}}=M_{\mathrm{fad,máx}}-M_{\mathrm{fad,mín}}$ | $1\,130{,}8$ | $3\,155{,}6$ | $3\,671{,}3$ |
+| Alternância de sinal? | não | não | não |
+| Face tracionada | superior | inferior | inferior |
 
 A variação $\Delta M_{\mathrm{fad}}$ é o que produz a variação de tensão
-$\Delta\sigma_s$ na armadura.
+$\Delta\sigma_s$ na armadura tracionada, a ser comparada com os limites da
+NBR 6118 no item 7.
 
 ### 7. Dimensionamento da armadura e verificação à fadiga
 

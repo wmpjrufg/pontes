@@ -167,10 +167,10 @@ Quando não há tabela para a geometria ou a vinculação desejada, a superfíci
 
 ### 5.1 Modelo
 
-A laje em balanço é calculada como uma faixa de $1{,}00\text{ m}$ engastada na face da longarina. Para as ações permanentes:
+A laje em balanço é calculada como uma faixa de $1{,}00\text{ m}$ engastada na face da longarina. Mantém-se a convenção de sinais de toda a aula: **momento positivo traciona a face inferior**. No balanço, todos os momentos no engaste são, portanto, **negativos** (tracionam a face superior). Para as ações permanentes:
 
 $$
-M_{g}=\sum_i G_i\,x_i ,
+M_{g}=-\sum_i G_i\,x_i ,
 $$
 
 somando o peso próprio da laje (com espessura variável, se for o caso), o pavimento até a face da barreira, a barreira e o guarda-corpo, cada um com seu braço $x_i$ até o engaste.
@@ -192,7 +192,7 @@ A roda é posicionada o mais perto possível do bordo: o veículo encostado na f
 $$
 b_{\mathrm{ef,conj}}=2\cdot1{,}50+b_{\mathrm{ef}}
 \qquad\qquad
-M_q=\frac{3\,P\,x}{b_{\mathrm{ef,conj}}}
+M_q=-\frac{3\,P\,x}{b_{\mathrm{ef,conj}}}
 \qquad\qquad
 V_q=\frac{3\,P}{b_{\mathrm{ef,conj}}} .
 $$
@@ -210,20 +210,20 @@ Calculadas isoladamente, a laje central (engastada na longarina) e a laje em bal
 O critério consolidado na prática brasileira, aceito pela NBR 6118 [[6]](#ref-6) (item 14.7.6.2) quando as lajes são calculadas isoladas, é:
 
 $$
-X=\max\left\{\frac{X_1+X_2}{2};\ 0{,}8\,X_{\mathrm{maior}};\ X_{\mathrm{bal}}\right\},
+X=-\max\left\{\frac{|X_1|+|X_2|}{2};\ 0{,}8\,|X_{\mathrm{maior}}|;\ |X_{\mathrm{bal}}|\right\},
 $$
 
-em que $X_1$ e $X_2$ são os módulos dos momentos de engaste das duas lajes. A terceira parcela vale quando uma das lajes é um **balanço**: como o balanço é isostático, seu momento no engaste não pode ser reduzido.
+em que $X_1$ e $X_2$ são os momentos de engaste (negativos) das duas lajes. O critério compara os módulos e devolve o momento com o seu sinal negativo. A terceira parcela vale quando uma das lajes é um **balanço**: como o balanço é isostático, seu momento no engaste não pode ser reduzido.
 
 ### 6.3 Correção do momento positivo
 
-Se o momento compatibilizado $X$ é menor que o momento de engaste $X_{\mathrm{iso}}$ calculado para a laje central isolada, o apoio "devolve" parte do momento ao vão. O momento positivo é então aumentado:
+Se o momento compatibilizado $X$ é menor, em módulo, que o momento de engaste $X_{\mathrm{iso}}$ calculado para a laje central isolada, o apoio "devolve" parte do momento ao vão. O momento positivo é então aumentado:
 
 $$
-M^{+}_{\mathrm{corr}}=M^{+}+\frac{X_{\mathrm{iso}}-X}{2} .
+M^{+}_{\mathrm{corr}}=M^{+}+\frac{X-X_{\mathrm{iso}}}{2} ,
 $$
 
-Se $X > X_{\mathrm{iso}}$, o momento positivo **não é reduzido**, a favor da segurança.
+com $X$ e $X_{\mathrm{iso}}$ entrando com seus sinais (negativos). Assim, a parcela $(X - X_{\mathrm{iso}})/2$ é positiva quando $|X| < |X_{\mathrm{iso}}|$. Se $|X| > |X_{\mathrm{iso}}|$, o momento positivo **não é reduzido**, a favor da segurança.
 
 ```{note}
 **Continuidade na direção do tráfego.** Entre painéis vizinhos da laje central (sobre as transversinas), Araújo [[2]](#ref-2) apresenta o procedimento simplificado da antiga NB-2: cada painel é calculado como simplesmente apoiado e o momento negativo no apoio é adotado entre $1/3$ e $2/3$ do momento máximo do vão, com a correspondente redução do momento positivo. Como os momentos da carga móvel predominam, a correção costuma ser feita só neles.
@@ -277,13 +277,15 @@ O coeficiente do engaste, próximo de $1/12 = 0{,}0833$, confirma que a laje tra
 
 **Carga móvel.** O veículo foi deslocado em toda a placa (passo de $5\text{ cm}$) até se encontrar a posição mais desfavorável para cada momento. A multidão foi aplicada fora do contorno do veículo, só onde a superfície tem o sinal procurado:
 
-| Momento | Rodas | Multidão | Total (sem $\varphi$) | Com $\varphi$ | Posição crítica |
-|---|---:|---:|---:|---:|---|
-| $m_{x,q}$ no centro | $25{,}87$ | $1{,}45$ | $27{,}32$ | $46{,}10$ | uma roda no centro |
-| $m_{y,q}$ no centro | $13{,}36$ | $0{,}56$ | $13{,}93$ | $23{,}50$ | uma roda no centro |
-| $X_{q}$ no engaste | $-51{,}81$ | $-1{,}86$ | $-53{,}67$ | $-90{,}56$ | roda a $0{,}80\text{ m}$ da longarina |
+| Momento | $M_{q,\mathrm{máx}}$ sem $\varphi$ (rodas + multidão) | $M_{q,\mathrm{mín}}$ sem $\varphi$ (rodas + multidão) | $M_{q,\mathrm{máx}}$ com $\varphi$ | $M_{q,\mathrm{mín}}$ com $\varphi$ |
+|---|---:|---:|---:|---:|
+| $m_{x}$ no centro | $+27{,}32\ (+25{,}87+1{,}45)$ | $0{,}00$ | $+46{,}10$ | $0{,}00$ |
+| $m_{y}$ no centro | $+13{,}93\ (+13{,}36+0{,}56)$ | $-3{,}07\ (-2{,}55-0{,}52)$ | $+23{,}50$ | $-5{,}18$ |
+| $X$ no engaste ($m_x$) | $0{,}00$ | $-53{,}67\ (-51{,}81-1{,}86)$ | $0{,}00$ | $-90{,}56$ |
 
-Valores em $\text{kN·m/m}$. Repare que a multidão quase não contribui: na laje, as rodas dominam.
+Valores em $\text{kN·m/m}$. Os máximos positivos ocorrem com uma roda sobre o centro da laje; o mínimo no engaste, com uma roda a $0{,}80\text{ m}$ da longarina. Repare que a multidão quase não contribui: na laje, as rodas dominam.
+
+Para a fadiga interessam os **dois extremos** de cada momento. A superfície de $m_x$ no centro é toda positiva e a de $X$ no engaste é toda negativa, de modo que o extremo de sinal contrário é nulo. Já a superfície de $m_y$ no centro tem regiões negativas (cerca de $70\%$ da área da placa) e o veículo afastado do centro produz $m_y$ negativo.
 
 **Esforços de cálculo da laje isolada:**
 
@@ -305,10 +307,10 @@ $$
 
 | Parcela | Carga | Braço (m) | Momento ($\text{kN·m/m}$) |
 |---|---:|---:|---:|
-| Laje (trapézio $30 \to 20\text{ cm}$) | $25\cdot\frac{0{,}30+0{,}20}{2}\cdot2{,}00=12{,}50\text{ kN/m}$ | $0{,}933$ | $11{,}67$ |
-| Pavimento até a barreira ($1{,}60\text{ m}$) | $3{,}92\cdot1{,}60=6{,}27\text{ kN/m}$ | $0{,}80$ | $5{,}02$ |
-| Barreira | $5{,}75\text{ kN/m}$ | $1{,}83$ | $10{,}52$ |
-| **Total** | $V_g = 24{,}52\text{ kN/m}$ | | $M_g = 27{,}21$ |
+| Laje (trapézio $30 \to 20\text{ cm}$) | $25\cdot\frac{0{,}30+0{,}20}{2}\cdot2{,}00=12{,}50\text{ kN/m}$ | $0{,}933$ | $-11{,}67$ |
+| Pavimento até a barreira ($1{,}60\text{ m}$) | $3{,}92\cdot1{,}60=6{,}27\text{ kN/m}$ | $0{,}80$ | $-5{,}02$ |
+| Barreira | $5{,}75\text{ kN/m}$ | $1{,}83$ | $-10{,}52$ |
+| **Total** | $V_g = 24{,}52\text{ kN/m}$ | | $M_g = -27{,}21$ |
 
 **Carga móvel.** Com o veículo encostado na barreira, o alinhamento externo de rodas fica a $x = 1{,}60 - 0{,}50 = 1{,}10\text{ m}$ do engaste. Nesse ponto a laje tem $h = 24{,}5\text{ cm}$, logo $b_1 = 0{,}20 + 0{,}16 + 0{,}245 = 0{,}605\text{ m}$ e:
 
@@ -321,17 +323,17 @@ b_{\mathrm{ef,conj}}=2\cdot1{,}50+2{,}805=5{,}805\text{ m}
 $$
 
 $$
-M_q=\frac{3\cdot75\cdot1{,}10}{5{,}805}=42{,}64\text{ kN·m/m}
+M_q=-\frac{3\cdot75\cdot1{,}10}{5{,}805}=-42{,}64\text{ kN·m/m}
 \qquad
 V_q=\frac{3\cdot75}{5{,}805}=38{,}76\text{ kN/m}
 $$
 
-Com uma única roda, o resultado seria $75 \cdot 1{,}10/2{,}805 = 29{,}41\text{ kN·m/m}$, cerca de $30\%$ menor.
+Com uma única roda, o resultado seria $-75 \cdot 1{,}10/2{,}805 = -29{,}41\text{ kN·m/m}$, cerca de $30\%$ menor em módulo. No balanço isolado, o momento máximo da carga móvel é nulo ($M_{q,\mathrm{máx}} = 0$): nenhuma posição da roda traciona a face inferior do engaste.
 
 **Esforços de cálculo:**
 
 $$
-M_{d,\mathrm{bal}}=1{,}35\cdot27{,}21+1{,}50\cdot(1{,}6875\cdot42{,}64)=36{,}73+107{,}93=144{,}65\text{ kN·m/m}
+M_{d,\mathrm{bal}}=1{,}35\cdot(-27{,}21)+1{,}50\cdot\left[1{,}6875\cdot(-42{,}64)\right]=-36{,}73-107{,}93=-144{,}65\text{ kN·m/m}
 $$
 
 $$
@@ -340,22 +342,24 @@ $$
 
 ### 7.4 Compatibilização no apoio comum (longarina)
 
+Com $X_1 = X_{d,\mathrm{iso}} = -162{,}63\text{ kN·m/m}$ (laje central) e $X_2 = X_{\mathrm{bal}} = -144{,}65\text{ kN·m/m}$ (balanço):
+
 $$
-\frac{X_1+X_2}{2}=\frac{162{,}63+144{,}65}{2}=153{,}64
+\frac{|X_1|+|X_2|}{2}=\frac{162{,}63+144{,}65}{2}=153{,}64
 \qquad
-0{,}8\cdot162{,}63=130{,}10
+0{,}8\cdot|{-162{,}63}|=130{,}10
 \qquad
-X_{\mathrm{bal}}=144{,}65
+|X_{\mathrm{bal}}|=144{,}65
 $$
 
 $$
-X_d=\max\{153{,}64;\ 130{,}10;\ 144{,}65\}=153{,}64\text{ kN·m/m}
+X_d=-\max\{153{,}64;\ 130{,}10;\ 144{,}65\}=-153{,}64\text{ kN·m/m}
 $$
 
-Como $X_d < X_{d,\mathrm{iso}} = 162{,}63$, o momento positivo da laje central é corrigido:
+Como $|X_d| = 153{,}64 < |X_{d,\mathrm{iso}}| = 162{,}63$, o momento positivo da laje central é corrigido:
 
 $$
-M^{+}_{x,d,\mathrm{corr}}=82{,}48+\frac{162{,}63-153{,}64}{2}=82{,}48+4{,}49=86{,}97\text{ kN·m/m}
+M^{+}_{x,d,\mathrm{corr}}=82{,}48+\frac{(-153{,}64)-(-162{,}63)}{2}=82{,}48+4{,}49=86{,}97\text{ kN·m/m}
 $$
 
 **Resumo dos esforços de cálculo** ($\text{kN·m/m}$ e $\text{kN/m}$):
@@ -381,9 +385,9 @@ $$
 |---|---:|---:|---:|---:|---|
 | L1 vão, $m_x$ (inferior, transversal) | $86{,}97$ | $0{,}172$ | $0{,}22$ | $12{,}76$ | Ø16 c/15 ($13{,}40$) |
 | L1 vão, $m_y$ (inferior, longitudinal) | $38{,}44$ | $0{,}159$ | $0{,}11$ | $5{,}81$ | Ø10 c/13 ($6{,}04$) |
-| Apoio L1/L2 (superior, $h = 30\text{ cm}$) | $153{,}64$ | $0{,}252$ | $0{,}18$ | $15{,}10$ | Ø16 c/13 ($15{,}47$) |
+| Apoio L1/L2 (superior, $h = 30\text{ cm}$) | $-153{,}64$ | $0{,}252$ | $0{,}18$ | $15{,}10$ | Ø16 c/13 ($15{,}47$) |
 
-Todos os valores superam $A_{s,\min} = 0{,}15\%\,b_w\,h$ ($3{,}30$ e $4{,}50\text{ cm}^2/\text{m}$) e todos os domínios atendem $x/d \le 0{,}45$.
+O sinal do momento define a face tracionada e, portanto, a posição da armadura; nas expressões de dimensionamento entra $|M_d|$. Todos os valores superam $A_{s,\min} = 0{,}15\%\,b_w\,h$ ($3{,}30$ e $4{,}50\text{ cm}^2/\text{m}$) e todos os domínios atendem $x/d \le 0{,}45$.
 
 **Cortante no engaste do balanço.** Com $\rho_1 = 15{,}47/(100\cdot25{,}2) = 0{,}0061$, $k = 1{,}6 - 0{,}252 = 1{,}35$ e $\tau_{Rd} = 0{,}25\,f_{ctd} = 0{,}362\text{ MPa}$:
 
@@ -397,11 +401,22 @@ e a laje dispensa armadura transversal.
 
 Para lajes de tabuleiro de pontes rodoviárias, a combinação frequente de fadiga usa $\psi_1 = 0{,}8$ [[6]](#ref-6):
 
-| Seção | $M_{\mathrm{fad,máx}}=M_g+0{,}8\,M_q$ | $M_{\mathrm{fad,mín}}=M_g$ |
-|---|---:|---:|
-| L1 vão, $m_x$ | $46{,}75$ | $9{,}87$ |
-| Engaste L1 | $-92{,}29$ | $-19{,}84$ |
-| Engaste L2 | $-84{,}76$ | $-27{,}21$ |
+$$
+M_{\mathrm{fad,máx}}=M_g+0{,}8\,M_{q,\mathrm{máx}}
+\qquad\qquad
+M_{\mathrm{fad,mín}}=M_g+0{,}8\,M_{q,\mathrm{mín}} ,
+$$
+
+com todos os momentos tomados **com sinal** e $M_q$ já multiplicado por $\varphi$. Máximo e mínimo são algébricos: num momento negativo, o "máximo" é o de menor módulo.
+
+| Seção | $M_g$ | $M_{q,\mathrm{máx}}$ | $M_{q,\mathrm{mín}}$ | $M_{\mathrm{fad,máx}}$ | $M_{\mathrm{fad,mín}}$ | Alternância de sinal? |
+|---|---:|---:|---:|---:|---:|:---:|
+| L1 vão, $m_x$ | $+9{,}87$ | $+46{,}10$ | $0{,}00$ | $+46{,}75$ | $+9{,}87$ | não |
+| L1 vão, $m_y$ | $+2{,}36$ | $+23{,}50$ | $-5{,}18$ | $+21{,}16$ | $-1{,}78$ | **sim** |
+| Engaste L1 (laje central) | $-19{,}84$ | $0{,}00$ | $-90{,}56$ | $-19{,}84$ | $-92{,}29$ | não |
+| Engaste L2 (balanço) | $-27{,}21$ | $0{,}00$ | $-71{,}95$ | $-27{,}21$ | $-84{,}77$ | não |
+
+Valores em $\text{kN·m/m}$. Há **alternância** quando $M_{\mathrm{fad,máx}}$ e $M_{\mathrm{fad,mín}}$ têm sinais opostos: a armadura longitudinal inferior ($m_y$) passa de tracionada a comprimida a cada passagem do veículo. Nas demais seções o momento não muda de sinal, e a mesma face fica sempre tracionada.
 
 Com esses valores calcula-se a variação de tensão $\Delta\sigma_s$ nas barras e compara-se com os limites da NBR 6118 [[6]](#ref-6). As barras da laje, com grande parcela de carga móvel, costumam ser governadas pela fadiga.
 

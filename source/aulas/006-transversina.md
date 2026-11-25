@@ -125,7 +125,7 @@ $$
 em que $R_{g,k}$ é a reação permanente característica da linha de apoio e $n_{\mathrm{mac}}$ o número de macacos. A transversina passa a funcionar como viga apoiada nos macacos e carregada pelas reações das longarinas:
 
 - com os macacos **alinhados com as longarinas**, a transferência é quase direta. O dimensionamento é governado pelo cisalhamento, pela armadura de suspensão e pela pressão de contato sob os macacos;
-- com uma **excentricidade** $e_m$ entre macaco e longarina, surge na transversina o momento $M_d = F_{\mathrm{mac},d}\,e_m$.
+- com uma **excentricidade** $e_m$ entre macaco e longarina, a transversina trabalha como um balanço curto sobre o macaco e surge o momento negativo (tração na face superior) $M_d = -F_{\mathrm{mac},d}\,e_m$.
 
 ## 6. Dimensionamento
 
@@ -265,7 +265,7 @@ Com $R_{g,k} = 900\text{ kN}$ por longarina, dois macacos por longarina e excent
 $$
 F_{\mathrm{mac},d}=\frac{1{,}35\cdot900}{2}=607{,}5\text{ kN}
 \qquad\qquad
-M_d=607{,}5\cdot0{,}60=364{,}5\text{ kN·m}
+M_d=-607{,}5\cdot0{,}60=-364{,}5\text{ kN·m}
 $$
 
 A transversina de apoio é então dimensionada para esse momento, para o cortante correspondente e para a pressão localizada sob os macacos.
